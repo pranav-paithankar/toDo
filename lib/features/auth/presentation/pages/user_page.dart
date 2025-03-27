@@ -15,10 +15,10 @@ class UserPage extends StatelessWidget {
         if (controller.isLoading.value) {
           return Center(
               child: LoaderWidget(
-            loaderSize: 100,
-            logoSize: 28,
-            fontSize: 20,
-          ));
+                  // loaderSize: 100,
+                  // logoSize: 28,
+                  // fontSize: 20,
+                  ));
         }
         if (controller.users.isEmpty) {
           return Center(
@@ -45,8 +45,12 @@ class UserPage extends StatelessWidget {
         );
       }),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: btnBgColor(),
         onPressed: () => controller.fetchUsers(),
-        child: Icon(Icons.refresh),
+        child: Icon(
+          Icons.refresh,
+          color: bgColor(),
+        ),
       ),
     );
   }

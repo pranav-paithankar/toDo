@@ -14,10 +14,8 @@ class UserController extends GetxController {
 
   void fetchUsers() async {
     try {
-      Future.delayed(Duration(seconds: 5), () async {
-        isLoading(true);
-        users.value = await getUsersUseCase.call();
-      });
+      isLoading(true);
+      users.value = await getUsersUseCase.call();
     } catch (e) {
       print("Error: $e");
     } finally {

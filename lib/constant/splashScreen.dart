@@ -26,10 +26,10 @@ class _SplashscreenState extends State<Splashscreen> {
       body: SafeArea(
           child: Center(
               child: LoaderWidget(
-        loaderSize: 200,
-        logoSize: 50,
-        fontSize: 35,
-      ))),
+                  // loaderSize: 200,
+                  // logoSize: 50,
+                  // fontSize: 35,
+                  ))),
     );
   }
 }

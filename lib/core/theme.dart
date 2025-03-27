@@ -3,8 +3,11 @@ import 'package:todo/constant/const.dart';
 
 ThemeData themeData() {
   return ThemeData(
-    colorScheme: ColorScheme.fromSeed(seedColor: bgColor()),
-    useMaterial3: true,
-    scaffoldBackgroundColor: bgColor(),
-  );
+      colorScheme: ColorScheme.fromSeed(seedColor: bgColor()),
+      useMaterial3: true,
+      scaffoldBackgroundColor: bgColor(),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+        backgroundColor: WidgetStateProperty.all<Color>(btnBgColor()),
+      )));
 }

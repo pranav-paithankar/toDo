@@ -1,22 +1,22 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+//import 'package:get/get_core/src/get_main.dart';
+//import 'package:get/get_navigation/get_navigation.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:todo/constant/const.dart';
-import 'package:todo/core/route/routesName.dart';
+//import 'package:todo/core/route/routesName.dart';
 
 class LoaderWidget extends StatefulWidget {
-  final double loaderSize;
-  final double logoSize;
-  final double fontSize;
+  // final double loaderSize;
+  // final double logoSize;
+  // final double fontSize;
 
   const LoaderWidget({
     super.key,
-    required this.loaderSize,
-    required this.logoSize,
-    required this.fontSize,
+    // required this.loaderSize,
+    // required this.logoSize,
+    // required this.fontSize,
   });
 
   @override
@@ -43,12 +43,14 @@ class _LoaderWidgetState extends State<LoaderWidget> {
 
   @override
   Widget build(BuildContext context) {
+    double width = getScreenWidth(context);
+    double height = getScreenHeight(context);
     return Stack(
       alignment: Alignment.center,
       children: [
         LoadingAnimationWidget.inkDrop(
           color: Colors.white,
-          size: widget.loaderSize,
+          size: width * 0.08 + height * 0.08,
         ),
         AnimatedOpacity(
           opacity: opacityLevel,
@@ -59,12 +61,12 @@ class _LoaderWidgetState extends State<LoaderWidget> {
             children: [
               Icon(
                 Icons.task_outlined,
-                size: widget.logoSize,
+                size: width * 0.025 + height * 0.025,
                 color: textColor(),
               ),
               Text(
                 "toDo",
-                style: titleText(widget.fontSize),
+                style: titleText(width * 0.02 + height * 0.02),
               ),
             ],
           ),
